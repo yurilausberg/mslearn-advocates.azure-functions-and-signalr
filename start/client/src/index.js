@@ -1,5 +1,13 @@
 import './style.css';
-import { BACKEND_URL } from './.env';
+
+
+function getApiUrl() {
+
+    const backend = process.env.BACKEND_URL;
+    
+    const url = (backend) ? `${backend}` : ``;
+    return url;
+}
 
 const app = new Vue({
     el: '#app',
@@ -12,7 +20,7 @@ const app = new Vue({
         async getStocks() {
             try {
 
-                const url = `${BACKEND_URL}/api/getStocks`;
+                const url = `${getApiUrl()}/api/getStocks`;
                 console.log('Fetching stocks from ', url);
 
                 const response = await fetch(url);
@@ -32,7 +40,7 @@ const app = new Vue({
 
 const connect = () => {
 
-    const signalR_URL = `${BACKEND_URL}/api`;
+    const signalR_URL = `${getApiUrl()}/api`;
     console.log(`Connecting to SignalR...${signalR_URL}`)
 
     const connection = new signalR.HubConnectionBuilder()
