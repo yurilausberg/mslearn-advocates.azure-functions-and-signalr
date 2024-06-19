@@ -3,9 +3,9 @@ import './style.css';
 
 function getApiUrl() {
 
-    const backend = process.env.BACKEND_URL;
+    const backend = "https://stock-prototype.azurewebsites.net";
     
-    const url = (backend) ? `${backend}` : ``;
+//    const url = (backend) ? `${backend}` : ``;
     return url;
 }
 
