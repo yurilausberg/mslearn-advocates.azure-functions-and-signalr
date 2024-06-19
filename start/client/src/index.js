@@ -3,10 +3,10 @@ import './style.css';
 
 function getApiUrl() {
 
-    const backend = "https://stock-prototype.azurewebsites.net";
+    return "https://stock-prototype.azurewebsites.net";
     
 //    const url = (backend) ? `${backend}` : ``;
-    return url;
+   // return url;
 }
 
 const app = new Vue({
